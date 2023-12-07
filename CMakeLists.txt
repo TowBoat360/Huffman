@@ -10,4 +10,5 @@ add_executable(Huffman_old main.c
         huffman.c
         io.c
         io.c
+        exit.h
 )
