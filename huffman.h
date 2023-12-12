@@ -11,7 +11,7 @@
  * @param in ist ein String, der in den Input-Buffer geschrieben wird
  * @param out ist ein String, in den der Inhalt des Output-Buffers geschrieben wird
  */
-void test_rd_chars_wr_bits(char in[], char out[]);
+void test_rd_chars_wr_bits(char in_filename[], char out_filename[]);
 
 /**
  *
@@ -20,6 +20,6 @@ void test_rd_chars_wr_bits(char in[], char out[]);
  * @param in ist ein String, der in den Inout-Buffer geschrieben wird
  * @param out ist ein String, in den der Inhalt des Output-Buffers geschrieben wird
  */
-void test_rd_bits_wr_chars(char in[], char out[]);
+void test_rd_bits_wr_chars(char in_filename[], char out_filename[]);
 
 #endif //HUFFMAN_HUFFMAN_H

@@ -6,12 +6,12 @@
 #include "io.h"
 #include <stdio.h>
 
-void test_rd_chars_wr_bits(char in[], char out[])
+void test_rd_chars_wr_bits(char in_filename[], char out_filename[])
 {
 	unsigned char c;
 
 	//Buffer initiieren
-	init_in(in);
+	init_in(in_filename);
 	init_out();
 
 	while (has_next_char())
@@ -30,17 +30,17 @@ void test_rd_chars_wr_bits(char in[], char out[])
 		}
 	}
 
-	get_out_buffer(out);
+	get_out_buffer(out_filename);
 
 	printf("\n");
 }
 
-void test_rd_bits_wr_chars(char in[], char out[])
+void test_rd_bits_wr_chars(char in_filename[], char out_filename[])
 {
 	BIT b;
 
 	//Buffer initiieren
-	init_in(in);
+	init_in(in_filename);
 	init_out();
 
 	while (has_next_bit())
@@ -59,7 +59,7 @@ void test_rd_bits_wr_chars(char in[], char out[])
 		}
 	}
 
-	get_out_buffer(out);
+	get_out_buffer(out_filename);
 
 	printf("\n");
 }

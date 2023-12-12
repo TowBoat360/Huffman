@@ -23,6 +23,9 @@ int main(int argc, char **argv)
 
 	bool help = false;
 
+	char in_filename[4096];
+	char out_filename[4096];
+
     for (int i = 1; i < argc; i++)
     {
         printf("arv[%d] = %s", i, argv[i]);
@@ -49,10 +52,12 @@ int main(int argc, char **argv)
 				{
 					if (i == index_output)
 					{
+						out_filename = argv[i];
 						printf("Ausgabedatei: %s\n", argv[i]);
 					}
 					else
 					{
+						in_filename = argv[i];
 						printf("Eingabedatei: %s\n", argv[i]);
 					}
 //				else
@@ -75,9 +80,11 @@ int main(int argc, char **argv)
 				{
 				case 'c':
 					compress = true;
+					decompress = false;
 					break;
 				case 'd':
 					decompress = true;
+					compress = false;
 					break;
 				case 'l': {
 					char c = *(argv[i]+2);
@@ -88,7 +95,7 @@ int main(int argc, char **argv)
 						level = 2;
 					} else if (*(argv[i]+3) == '\0')
 					{
-						level = '2';
+						level = c;
 					}
 					else
 					{
